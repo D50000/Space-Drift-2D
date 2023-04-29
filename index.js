@@ -1,5 +1,8 @@
 const canvas = document.querySelector("canvas");
-canvas.width = innerWidth
-canvas.height = innerHeight
+canvas.width = window.innerWidth;
+canvas.height = window.innerWidth;
 
-console.log(canvas)
+const canvas2dContext = canvas.getContext("2d");
+
+const player = new Player(100, 100, 30, 'blue');
+console.log(canvas2dContext);
