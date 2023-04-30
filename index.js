@@ -4,17 +4,36 @@ canvas.height = window.innerWidth;
 
 const canvas2dContext = canvas.getContext("2d");
 
+// Player
 const player = new Player(canvas.width / 2, canvas.height / 2, 30, "blue");
 player.draw();
 
+// Projectile
+const projectiles = [];
+
+function animate() {
+  // Looping the frame.
+  requestAnimationFrame(animate);
+  projectiles.forEach((projectile) => {
+    projectile.drawAndUpdate();
+  });
+}
+
 window.addEventListener("click", (event) => {
   console.log("Shoot !!");
-  const projectile = new Projectile(
-    event.clientX,
-    event.clientY,
-    5,
-    "red",
-    null
+  // It will calculate Theta.
+  const angle = Math.atan2(
+    event.clientY - canvas.height / 2,
+    event.clientX - canvas.width / 2
   );
-  projectile.draw();
+  const velocity = {
+    x: Math.cos(angle),
+    y: Math.sin(angle),
+  };
+
+  projectiles.push(
+    new Projectile(canvas.width / 2, canvas.height / 2, 5, "red", velocity)
+  );
 });
+
+animate();

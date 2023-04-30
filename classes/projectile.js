@@ -15,4 +15,10 @@ class Projectile {
     canvas2dContext.fillStyle = this.color;
     canvas2dContext.fill();
   }
+
+  drawAndUpdate() {
+    this.draw();
+    this.x = this.x + this.velocity.x;
+    this.y = this.y + this.velocity.y;
+  }
 }
