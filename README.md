@@ -5,7 +5,7 @@
 ## Check List
 
 - [x] Create a Player
-- [ ] Shoot projectiles
+- [x] Shoot projectiles
 - [ ] Create enemies
 - [ ] Detect collision on enemy/projectile hit
 - [ ] Detect collision on enemy/player hit
@@ -16,6 +16,12 @@
 - [ ] Add score Add game over UI
 - [ ] Add restart button
 - [ ] Add start game button
+
+### TODO:
+
+Convert js file to ts.
+Convert css to scss.
+Convert it to Modules.
 
 ### Reference
 
