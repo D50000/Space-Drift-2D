@@ -6,7 +6,6 @@ const canvas2dContext = canvas.getContext("2d");
 
 // Player
 const player = new Player(canvas.width / 2, canvas.height / 2, 30, "blue");
-player.draw();
 
 // Projectile
 const projectiles = [];
@@ -14,6 +13,8 @@ const projectiles = [];
 function animate() {
   // Looping the frame.
   requestAnimationFrame(animate);
+  canvas2dContext.clearRect(0, 0, canvas.width, canvas.height);
+  player.draw();
   projectiles.forEach((projectile) => {
     projectile.drawAndUpdate();
   });
@@ -21,12 +22,13 @@ function animate() {
 
 window.addEventListener("click", (event) => {
   console.log("Shoot !!");
-  // It will calculate Theta.
+  // It will calculate Theta. (-pi ~ pi)
   const angle = Math.atan2(
     event.clientY - canvas.height / 2,
     event.clientX - canvas.width / 2
   );
   const velocity = {
+    // Return radian. (-1 ~ 1)
     x: Math.cos(angle),
     y: Math.sin(angle),
   };
