@@ -16,11 +16,12 @@
 - [ ] Add score Add game over UI
 - [ ] Add restart button
 - [ ] Add start game button
+- [ ] Add music and sound
 
 ### TODO:
 
-Convert js file to ts.
-Convert css to scss.
+Convert js file to ts.  
+Convert css to scss.  
 Convert it to Modules.
 
 ### Reference

@@ -6,9 +6,26 @@ const canvas2dContext = canvas.getContext("2d");
 
 // Player
 const player = new Player(canvas.width / 2, canvas.height / 2, 30, "blue");
-
 // Projectile
 const projectiles = [];
+// Projectile
+const enemies = [];
+
+function spawnEnemies() {
+  setInterval(() => {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const radius = 30;
+    const color = "green";
+    const angle = Math.atan2(canvas.height / 2 - y, canvas.width / 2 - x);
+    const velocity = {
+      x: Math.cos(angle),
+      y: Math.sin(angle),
+    };
+
+    enemies.push(new Enemy(x, y, radius, color, velocity));
+  }, 1000);
+}
 
 function animate() {
   // Looping the frame.
@@ -17,6 +34,9 @@ function animate() {
   player.draw();
   projectiles.forEach((projectile) => {
     projectile.drawAndUpdate();
+  });
+  enemies.forEach((enemy) => {
+    enemy.drawAndUpdate();
   });
 }
 
@@ -39,3 +59,4 @@ window.addEventListener("click", (event) => {
 });
 
 animate();
+spawnEnemies();
