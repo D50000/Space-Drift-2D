@@ -44,8 +44,18 @@ function animate() {
   projectiles.forEach((projectile) => {
     projectile.drawAndUpdate();
   });
-  enemies.forEach((enemy) => {
+  enemies.forEach((enemy, enemyIndex) => {
     enemy.drawAndUpdate();
+
+    projectiles.forEach((projectile, projectileIndex) => {
+      const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y);
+
+      // Collision detection
+      if (dist - enemy.radius - projectile.radius <= 0) {
+        enemies.splice(enemyIndex, 1);
+        projectiles.splice(projectileIndex, 1);
+      }
+    });
   });
 }
 
