@@ -52,8 +52,10 @@ function animate() {
 
       // Collision detection
       if (dist - enemy.radius - projectile.radius <= 0) {
-        enemies.splice(enemyIndex, 1);
-        projectiles.splice(projectileIndex, 1);
+        setTimeout(() => {
+          enemies.splice(enemyIndex, 1);
+          projectiles.splice(projectileIndex, 1);
+        }, 0);
       }
     });
   });
