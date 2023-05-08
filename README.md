@@ -9,7 +9,7 @@
 - [x] Create enemies
 - [x] Detect collision on enemy/projectile hit
 - [x] Detect collision on enemy/player hit
-- [ ] Remove off screen projectiles
+- [x] Remove off screen projectiles
 - [ ] Colorize game
 - [ ] Shrink enemies on hit
 - [ ] Create particle explosion on hit

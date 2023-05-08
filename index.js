@@ -42,9 +42,22 @@ function animate() {
   animationId = requestAnimationFrame(animate);
   canvas2dContext.clearRect(0, 0, canvas.width, canvas.height);
   player.draw();
-  projectiles.forEach((projectile) => {
+
+  projectiles.forEach((projectile, projectileIndex) => {
     projectile.drawAndUpdate();
+    // Remove bullets that out of screen.
+    if (
+      projectile.x + projectile.radius < 0 ||
+      projectile.x - projectile.radius > canvas.width ||
+      projectile.y + projectile.radius < 0 ||
+      projectile.y - projectile.radius > canvas.height
+    ) {
+      setTimeout(() => {
+        projectiles.splice(projectileIndex, 1);
+      }, 0);
+    }
   });
+
   enemies.forEach((enemy, enemyIndex) => {
     enemy.drawAndUpdate();
     // Collision detection. Enemy & Player.
