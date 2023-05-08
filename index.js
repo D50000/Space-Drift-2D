@@ -36,9 +36,10 @@ function spawnEnemies() {
   }, 1000);
 }
 
+let animationId;
 function animate() {
   // Looping the frame.
-  requestAnimationFrame(animate);
+  animationId = requestAnimationFrame(animate);
   canvas2dContext.clearRect(0, 0, canvas.width, canvas.height);
   player.draw();
   projectiles.forEach((projectile) => {
@@ -46,11 +47,15 @@ function animate() {
   });
   enemies.forEach((enemy, enemyIndex) => {
     enemy.drawAndUpdate();
+    // Collision detection. Enemy & Player.
+    const dist = Math.hypot(player.x - enemy.x, player.y - enemy.y);
+    if (dist - enemy.radius - player.radius <= 0) {
+      cancelAnimationFrame(animationId);
+    }
 
     projectiles.forEach((projectile, projectileIndex) => {
       const dist = Math.hypot(projectile.x - enemy.x, projectile.y - enemy.y);
-
-      // Collision detection
+      // Collision detection. Enemy & Projectile.
       if (dist - enemy.radius - projectile.radius <= 0) {
         setTimeout(() => {
           enemies.splice(enemyIndex, 1);
