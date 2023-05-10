@@ -5,7 +5,7 @@ canvas.height = 768;
 const canvas2dContext = canvas.getContext("2d");
 
 // Player
-const player = new Player(canvas.width / 2, canvas.height / 2, 30, "blue");
+const player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
 // Projectile
 const projectiles = [];
 // Projectile
@@ -25,7 +25,8 @@ function spawnEnemies() {
       x = Math.random() * canvas.width;
       y = Math.random() < 0.5 ? 0 - radius : canvas.height + radius;
     }
-    const color = "green";
+    // Use HSL (Hue, Saturation, Lightness).
+    const color = `hsl(${Math.random() * 360}, 50%, 50%)`;
     const angle = Math.atan2(canvas.height / 2 - y, canvas.width / 2 - x);
     const velocity = {
       x: Math.cos(angle),
@@ -40,7 +41,8 @@ let animationId;
 function animate() {
   // Looping the frame.
   animationId = requestAnimationFrame(animate);
-  canvas2dContext.clearRect(0, 0, canvas.width, canvas.height);
+  canvas2dContext.fillStyle = "rgba(0, 0, 0, 0.1)";
+  canvas2dContext.fillRect(0, 0, canvas.width, canvas.height);
   player.draw();
 
   projectiles.forEach((projectile, projectileIndex) => {
@@ -88,12 +90,12 @@ window.addEventListener("click", (event) => {
   );
   const velocity = {
     // Return radian. (-1 ~ 1)
-    x: Math.cos(angle),
-    y: Math.sin(angle),
+    x: Math.cos(angle) * 3,
+    y: Math.sin(angle) * 3,
   };
 
   projectiles.push(
-    new Projectile(canvas.width / 2, canvas.height / 2, 5, "red", velocity)
+    new Projectile(canvas.width / 2, canvas.height / 2, 5, "#c3c3c3", velocity)
   );
 });
 
