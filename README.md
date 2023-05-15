@@ -12,7 +12,7 @@
 - [x] Remove off screen projectiles
 - [x] Colorize game
 - [x] Shrink enemies on hit
-- [ ] Create particle explosion on hit
+- [x] Create particle explosion on hit
 - [ ] Add score Add game over UI
 - [ ] Add restart button
 - [ ] Add start game button
@@ -30,3 +30,5 @@ Convert it to Modules.
   https://store.steampowered.com/app/858210/Nova_Drift/
 - Chris Courses  
   https://www.youtube.com/@ChrisCourses
+- GSAP
+  https://github.com/greensock/GSAP

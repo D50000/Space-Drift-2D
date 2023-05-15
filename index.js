@@ -74,7 +74,10 @@ function animate() {
       // Collision detection. Enemy & Projectile.
       if (dist - enemy.radius - projectile.radius <= 0) {
         if (enemy.radius - 10 >= 10) {
-          enemy.radius -= 10;
+          // GSAP smooth animation effect.
+          gsap.to(enemy, {
+            radius: enemy.radius - 10,
+          });
           setTimeout(() => {
             projectiles.splice(projectileIndex, 1);
           }, 0);
