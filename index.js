@@ -6,9 +6,9 @@ const canvas2dContext = canvas.getContext("2d");
 
 // Player
 const player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
-// Projectile
+// Projectiles
 const projectiles = [];
-// Projectile
+// Enemies
 const enemies = [];
 
 function spawnEnemies() {
