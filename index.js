@@ -3,6 +3,7 @@ const canvas = document.querySelector("canvas");
 canvas.width = 1024;
 canvas.height = 768;
 const canvas2dContext = canvas.getContext("2d");
+const scoreNumberElement = document.querySelector(".score-number");
 
 // Player
 const player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
@@ -38,6 +39,7 @@ function spawnEnemies() {
 }
 
 let animationId;
+let scoreNumber = 0;
 function animate() {
   // Looping the frame.
   animationId = requestAnimationFrame(animate);
