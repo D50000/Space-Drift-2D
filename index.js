@@ -77,11 +77,11 @@ function animate() {
 
       // Collision detection. Enemy & Projectile.
       if (dist - enemy.radius - projectile.radius <= 0) {
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < enemy.radius * 0.5; i++) {
           particles.push(
             new Particle(projectile.x, projectile.y, 3, enemy.color, {
-              x: Math.random() - 0.5,
-              y: Math.random() - 0.5,
+              x: (Math.random() - 0.5) * 3,
+              y: (Math.random() - 0.5) * 3,
             })
           );
         }
@@ -103,8 +103,12 @@ function animate() {
     });
   });
 
-  particles.forEach((particle) => {
-    particle.drawAndUpdate();
+  particles.forEach((particle, particleIndex) => {
+    if (particle.alpha <= 0) {
+      particles.splice(particleIndex, 1);
+    } else {
+      particle.drawAndUpdate();
+    }
   });
 }
 
@@ -117,8 +121,8 @@ window.addEventListener("click", (event) => {
   );
   const velocity = {
     // Return radian. (-1 ~ 1)
-    x: Math.cos(angle) * 3,
-    y: Math.sin(angle) * 3,
+    x: Math.cos(angle) * 3.5,
+    y: Math.sin(angle) * 3.5,
   };
 
   projectiles.push(
