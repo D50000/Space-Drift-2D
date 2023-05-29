@@ -11,6 +11,8 @@ const player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
 const projectiles = [];
 // Enemies
 const enemies = [];
+// Particles
+const particles = [];
 
 function spawnEnemies() {
   setInterval(() => {
@@ -75,6 +77,14 @@ function animate() {
 
       // Collision detection. Enemy & Projectile.
       if (dist - enemy.radius - projectile.radius <= 0) {
+        for (let i = 0; i < 6; i++) {
+          particles.push(
+            new Particle(projectile.x, projectile.y, 3, enemy.color, {
+              x: Math.random() - 0.5,
+              y: Math.random() - 0.5,
+            })
+          );
+        }
         if (enemy.radius - 10 >= 10) {
           // GSAP smooth animation effect.
           gsap.to(enemy, {
@@ -91,6 +101,10 @@ function animate() {
         }
       }
     });
+  });
+
+  particles.forEach((particle) => {
+    particle.drawAndUpdate();
   });
 }
 
