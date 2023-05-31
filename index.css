@@ -5,3 +5,9 @@ body {
   justify-content: center;
   background-color: #d5d5d5;
 }
+
+.nav-bar {
+  position: absolute;
+  top: 10px;
+  color: white;
+}
