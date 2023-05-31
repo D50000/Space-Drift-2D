@@ -1,8 +1,7 @@
 const canvas = document.querySelector("canvas");
 // Set the canvas board.
-// TODO: accuracy bug.
-canvas.width = 1366;
-canvas.height = 768;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 const canvas2dContext = canvas.getContext("2d");
 const scoreNumberElement = document.querySelector(".score-number");
 

@@ -18,6 +18,12 @@
 - [ ] Add start game button
 - [ ] Add music and sound
 
+### Know Bugs
+
+- ~~Accuracy bug.~~
+
+- Infinity enemies after idle out of the browser.
+
 ### TODO:
 
 Convert js file to ts.  
