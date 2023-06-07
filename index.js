@@ -77,6 +77,8 @@ function animate() {
 
       // Collision detection. Enemy & Projectile.
       if (dist - enemy.radius - projectile.radius <= 0) {
+        scoreNumber += 10;
+        scoreNumberElement.innerHTML = scoreNumber;
         for (let i = 0; i < enemy.radius * 0.5; i++) {
           particles.push(
             new Particle(projectile.x, projectile.y, 3, enemy.color, {
@@ -86,6 +88,8 @@ function animate() {
           );
         }
         if (enemy.radius - 10 >= 10) {
+          scoreNumber += 50;
+          scoreNumberElement.innerHTML = scoreNumber;
           // GSAP smooth animation effect.
           gsap.to(enemy, {
             radius: enemy.radius - 10,
@@ -94,6 +98,8 @@ function animate() {
             projectiles.splice(projectileIndex, 1);
           }, 0);
         } else {
+          scoreNumber += 200;
+          scoreNumberElement.innerHTML = scoreNumber;
           setTimeout(() => {
             enemies.splice(enemyIndex, 1);
             projectiles.splice(projectileIndex, 1);
