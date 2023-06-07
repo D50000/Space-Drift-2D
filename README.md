@@ -13,9 +13,8 @@
 - [x] Colorize game
 - [x] Shrink enemies on hit
 - [x] Create particle explosion on hit
-- [x] Add score Add game over UI
-- [ ] Add restart button
-- [ ] Add start game button
+- [x] Add Floating score UI
+- [ ] Add start/restart game dialog
 - [ ] Add music and sound
 
 ### Know Bugs

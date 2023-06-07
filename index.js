@@ -98,7 +98,7 @@ function animate() {
             projectiles.splice(projectileIndex, 1);
           }, 0);
         } else {
-          scoreNumber += 200;
+          scoreNumber += 150;
           scoreNumberElement.innerHTML = scoreNumber;
           setTimeout(() => {
             enemies.splice(enemyIndex, 1);
