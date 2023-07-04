@@ -1,7 +1,7 @@
 # Space-Drift-2D
 
-2D Shooting Game
-Online Game Demo
+2D Shooting Game  
+[Online Game Demo](https://d50000.github.io/Space-Drift-2D/)
 
 ## Check List
 
