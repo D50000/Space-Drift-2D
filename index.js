@@ -4,6 +4,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const canvas2dContext = canvas.getContext("2d");
 const scoreNumberElement = document.querySelector(".score-number");
+const startGameBtn = document.querySelector(".game-btn");
+const dialog = document.querySelector(".dialog");
+const dialogScoreEle = document.querySelector(".dialog .score");
 
 // Player
 const player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
@@ -69,7 +72,10 @@ function animate() {
     // Collision detection. Enemy & Player.
     const dist = Math.hypot(player.x - enemy.x, player.y - enemy.y);
     if (dist - enemy.radius - player.radius <= 0) {
+      // Game over
       cancelAnimationFrame(animationId);
+      dialog.style.display = "flex";
+      dialogScoreEle.innerHTML = scoreNumber;
     }
 
     projectiles.forEach((projectile, projectileIndex) => {
@@ -136,5 +142,8 @@ window.addEventListener("click", (event) => {
   );
 });
 
-animate();
-spawnEnemies();
+startGameBtn.addEventListener("click", () => {
+  animate();
+  spawnEnemies();
+  dialog.style.display = "none";
+});

@@ -18,3 +18,13 @@ body {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+
+.dialog {
+  display: flex;
+  width: 30%;
+  height: 20%;
+  justify-content: center;
+  position: fixed;
+  border-radius: 25px;
+  background-color: white;
+}
