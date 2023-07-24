@@ -9,13 +9,21 @@ const dialog = document.querySelector(".dialog");
 const dialogScoreEle = document.querySelector(".dialog .score");
 
 // Player
-const player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
+let player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
 // Projectiles
-const projectiles = [];
+let projectiles = [];
 // Enemies
-const enemies = [];
+let enemies = [];
 // Particles
-const particles = [];
+let particles = [];
+
+function init() {
+  player = new Player(canvas.width / 2, canvas.height / 2, 10, "white");
+  projectiles = [];
+  enemies = [];
+  particles = [];
+  scoreNumberElement.innerHTML = 0;
+}
 
 function spawnEnemies() {
   setInterval(() => {
@@ -143,6 +151,7 @@ window.addEventListener("click", (event) => {
 });
 
 startGameBtn.addEventListener("click", () => {
+  init();
   animate();
   spawnEnemies();
   dialog.style.display = "none";
