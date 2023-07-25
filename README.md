@@ -15,7 +15,7 @@
 - [x] Shrink enemies on hit
 - [x] Create particle explosion on hit
 - [x] Add Floating score UI
-- [ ] Add start/restart game dialog
+- [x] Add start/restart game dialog
 - [ ] Add music and sound
 
 ### Know Bugs

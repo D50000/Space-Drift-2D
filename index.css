@@ -21,10 +21,33 @@ body {
 
 .dialog {
   display: flex;
-  width: 30%;
+  width: 25%;
   height: 20%;
   justify-content: center;
   position: fixed;
   border-radius: 25px;
-  background-color: white;
+  background-color: #b6b6b6;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.game-btn {
+  background-color: #37983b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
 }
