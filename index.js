@@ -96,8 +96,8 @@ function animate() {
         for (let i = 0; i < enemy.radius * 0.5; i++) {
           particles.push(
             new Particle(projectile.x, projectile.y, 3, enemy.color, {
-              x: (Math.random() - 0.5) * 3,
-              y: (Math.random() - 0.5) * 3,
+              x: (Math.random() - 0.5) * 4,
+              y: (Math.random() - 0.5) * 4,
             })
           );
         }
