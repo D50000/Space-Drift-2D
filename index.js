@@ -22,6 +22,7 @@ function init() {
   projectiles = [];
   enemies = [];
   particles = [];
+  scoreNumber = 0;
   scoreNumberElement.innerHTML = 0;
 }
 
