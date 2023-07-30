@@ -1,9 +1,16 @@
 # Space-Drift-2D
 
-2D Shooting Game  
+Simply, Fast, Interesting, Shooting Game.  
 [Online Game Demo](https://d50000.github.io/Space-Drift-2D/)
 
-## Check List
+## Game Play & Guide Line
+
+Rule:
+Control:
+
+PS: gif gamePlay
+
+## Shooting Game Mechanics Check List
 
 - [x] Create a Player
 - [x] Shoot projectiles
@@ -36,5 +43,5 @@ Convert it to Modules.
   https://store.steampowered.com/app/858210/Nova_Drift/
 - Chris Courses  
   https://www.youtube.com/@ChrisCourses
-- GSAP
+- GSAP  
   https://github.com/greensock/GSAP
