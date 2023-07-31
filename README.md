@@ -1,14 +1,19 @@
 # Space-Drift-2D
 
-Simply, Fast, Interesting, Shooting Game.  
+**Simply**, **Fast**, **Interesting**, **Shooting** **Game**.  
 [Online Game Demo](https://d50000.github.io/Space-Drift-2D/)
 
 ## Game Play & Guide Line
 
-Rule:
-Control:
+**Rule:**  
+Don't Be hit and keep shooting the enemies.
+Get the score on enemy hit, destroy enemy has additional score and bigger enemy has more point.
 
-PS: gif gamePlay
+**Control:**  
+**Keep alive, aim(cursor only) and shoot.**
+![](https://github.com/D50000/Space-Drift-2D/blob/main/assets/gameplay.jpg)
+
+![](https://github.com/D50000/Space-Drift-2D/blob/main/assets/demo.gif)
 
 ## Shooting Game Mechanics Check List
 
